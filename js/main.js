@@ -78,6 +78,11 @@ const domButton = document.querySelectorAll('.dom-btn');
         `
 
         appendChildArea.appendChild(div);
+         domButtonCount++
+        // console.log(domButtonCount);
+        const markAsRead = document.getElementById('mark-as-read');
+        markAsRead.innerText = domButtonCount;
+
       })
     }
 }
