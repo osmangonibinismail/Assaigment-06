@@ -19,6 +19,11 @@ allPosts.forEach(post => {
           <!--  -->
           <div class="indicator">
             <span class="indicator-item badge ${icon}"></span> 
+    <div class="section-body grid grid-cols-1 lg:grid-cols-2 mt-10 gap-6">
+        <div class="hero-content flex flex-col lg:flex-row  border rounded-2xl">
+          <!--  -->
+          <div class="indicator">
+            <span class="indicator-item badge ${icon}"></span> 
             <div class="grid w-32 h-32 bg-base-300 place-items-center"><img src="${post.image}"></div>
           </div>
           <div class="">
