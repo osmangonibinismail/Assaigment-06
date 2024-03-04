@@ -14,7 +14,7 @@ allPosts.forEach(post => {
     const div = document.createElement('div');
     const icon = post.isActive ? 'badge-accent' : 'badge-error';
     div.innerHTML = `
-    <div class="flex gap-5">
+    <div class="flex gap-5 my-5 bg-gray-100 p-5">
               <div class="indicator">
                 <span class="indicator-item badge ${icon}"></span>
                 <div class="grid w-32 h-32 bg-base-300 place-items-center rounded-2xl">
@@ -48,18 +48,38 @@ allPosts.forEach(post => {
                           </div>
                       </div>
                       <div>
-                          <button class="" type="button" >
-                            <button class="btn btn-ghost btn-circle border-zinc-300 bg-green-400">
+                            <button id="dom-btn" class=" dom-btn btn btn-ghost btn-circle border-zinc-300 bg-green-400" data-post-id="${post.id}">
                             <i class="fa-regular fa-envelope-open border-white"></i>
                             </button>
-                          </button>
                       </div>
                   </div>
               </div>
             </div>
     `
-    cardContainer.appendChild(div);
+    cardContainer.appendChild(div);   
 });
+const domButton = document.querySelectorAll('.dom-btn');
+    let domButtonCount = 0;
+    for (const button of domButton) {
+      button.addEventListener('click', () => {
+        const buttonId = button.dataset.postId;
+        const pressButton = allPosts.find(post => post.id == buttonId);
+        // console.log(pressButton)
+        const appendChildArea = document.getElementById('append-child');
+        const div = document.createElement('div');
+        div.innerHTML = `
+        
+        <div class="flex justify-between">
+        <h3>${pressButton.title}</h3>
+        <p>
+          <i class="fa-regular fa-eye mr-1"></i>${pressButton.view_count}
+        </p>
+      </div>
+        `
+
+        appendChildArea.appendChild(div);
+      })
+    }
 }
 // 
 const getAllLatestPost = () =>{
