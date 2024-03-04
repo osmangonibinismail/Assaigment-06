@@ -14,48 +14,49 @@ allPosts.forEach(post => {
     const div = document.createElement('div');
     const icon = post.isActive ? 'badge-accent' : 'badge-error';
     div.innerHTML = `
-    <div class="section-body grid grid-cols-1 lg:grid-cols-2 mt-10 gap-6">
-        <div class="hero-content flex flex-col lg:flex-row  border rounded-2xl">
-          <!--  -->
-          <div class="indicator">
-            <span class="indicator-item badge ${icon}"></span> 
-    <div class="section-body grid grid-cols-1 lg:grid-cols-2 mt-10 gap-6">
-        <div class="hero-content flex flex-col lg:flex-row  border rounded-2xl">
-          <!--  -->
-          <div class="indicator">
-            <span class="indicator-item badge ${icon}"></span> 
-            <div class="grid w-32 h-32 bg-base-300 place-items-center"><img src="${post.image}"></div>
-          </div>
-          <div class="">
-            <div class="flex gap-6">
-              <h6># ${post.category}</h6>
-              <h6>Author : ${post.author.name}</h6>
-            </div>
-            <h3 class="text-xl font-bold text-[#131318]">${post.title}</h3>
-            <p class="font-medium text-[#13131899]">${post.description}</p>
-            <div class="flex gap-6 border-y-2 border-dashed py-5 my-5 ">
-              <div class="flex gap-2">
-                <i class="fa-solid fa-envelope"></i>
-                <p>${post.comment_count}</p>
-              </div>
-              <div class="flex gap-2">
-                <i class="fa-solid fa-eye"></i>
-                <p>${post.view_count}</p>
-              </div>
-              <div class="flex gap-2">
-                <i class="fa-solid fa-clock"></i>
-                <div class="flex gap-1">
-                  <p>${post.posted_time} min</p>
+    <div class="flex gap-5">
+              <div class="indicator">
+                <span class="indicator-item badge ${icon}"></span>
+                <div class="grid w-32 h-32 bg-base-300 place-items-center rounded-2xl">
+                    <img src="${post.image}" alt="Images" class="">
                 </div>
               </div>
-              <!-- message icon -->
-              <div class="btn btn-ghost btn-circle border-zinc-300 bg-green-400 text-white ">
-                <i class="fa-regular fa-envelope-open"></i>
+              <div>
+                  <div class="flex gap-5">
+                    <h1 class=""># ${post.category}</h1>
+                    <h1>Author: ${post.author.name}</h1>
+                  </div>
+                  <h3 class="text-[#12132D] text-xl font-bold">${post.title}</h3>
+                  <p class="text-[#12132D] text-opacity-60 text-base font-normal leading-relaxed">${post.description}</p>
+                  <hr class="my-5">
+                  <div class="flex justify-between item-center">
+                      <div class="flex gap-5">
+                          <div class="flex gap-1 item-center">
+                              <p>
+                                <i class="fa-regular fa-envelope mr-1"></i>${post.comment_count}
+                              </p>
+                          </div>
+                          <div class="flex  gap-1 item-center">
+                            <p>
+                              <i class="fa-regular fa-eye mr-1"></i>${post.view_count}
+                            </p>
+                          </div>
+                          <div class="flex gap-1">
+                            <p>
+                              <i class="fa-regular fa-clock text-none mr-1"></i>${post.posted_time} min
+                            </p>
+                          </div>
+                      </div>
+                      <div>
+                          <button class="" type="button" >
+                            <button class="btn btn-ghost btn-circle border-zinc-300 bg-green-400">
+                            <i class="fa-regular fa-envelope-open border-white"></i>
+                            </button>
+                          </button>
+                      </div>
+                  </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
     `
     cardContainer.appendChild(div);
 });
