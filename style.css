@@ -11,5 +11,6 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
-    /* text-align: center; */
+    justify: center;
+    align: center;
   }

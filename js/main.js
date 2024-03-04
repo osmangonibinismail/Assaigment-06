@@ -68,9 +68,9 @@ const handleLatestCardContainer = (data) => {
     data.forEach(post => {
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="container mx-auto max-w-[90%] lg:max-w-[80%] p-5 flex bg-none">
+        <div class="container mx-auto max-w-[90%] lg:max-w-[80%] p-5 flex bg-inherit">
             <div class="card w-96 bg-base-100 shadow-xl rounded-3xl">
-            <figure class="p-5 ">
+            <figure class="p-5 bg-cover bg-center rounded-3xl">
                 <img src="${post.cover_image}" alt="Shoes" />
             </figure>
             <div class="card-body justify-start">
